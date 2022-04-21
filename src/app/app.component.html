@@ -1,0 +1,57 @@
+<h1>Angular Fundamentals Exploration</h1>
+
+<h2>Angular is running!</h2>
+<p>
+  When you opened this project, <b>npm start</b> was executed automatically.
+  These instructions that you are reading are in the app component
+  (app.component.html); replace this content with your own to get started!
+</p>
+
+<h2>An API server is available in this project.</h2>
+<p>
+  You can run this project without the API server, but if you want to make http
+  calls to an API Server:
+</p>
+<ul>
+  <li>
+    Open a new console window, by clicking the <b>+</b> in the top-right corner
+    of the terminal window (which is below the coding window).
+  </li>
+  <li>
+    In that console window, run <b>npm run server</b> to start the api server.
+  </li>
+</ul>
+<p>
+  The API server serves up the sample list of products that you can find in
+  app.cmopnent.ts and that you can see below. The API server is a simple express
+  server and you can modify it by changing the file at
+  <b>/api-server/index.js</b> file.
+</p>
+<p>
+  You can proxy your api with `proxy.conf.json` in Stackblitz just like you
+  would on your local computer.
+</p>
+
+<h2>Product Data and Image Files</h2>
+This project has provided some sample product data and images for you to use!
+This data includes images and product data as shown below:
+
+<div
+  [ngStyle]="{ display: 'flex', 'flex-direction': 'column' }"
+  *ngFor="let product of products"
+>
+  <div [ngStyle]="{ display: 'flex', margin: '20px 0' }">
+    <img
+      src="{{ '/assets/images/robots/' + product.imageName }}"
+      [ngStyle]="{ width: '100px' }"
+      alt="{{ product.name }}"
+    />
+    <div [ngStyle]="{ display: 'flex', 'flex-direction': 'column' }">
+      <div>Name: {{ product.name }}</div>
+      <div>Price: {{ product.price }}</div>
+      <div>Category: {{ product.category }}</div>
+      <div>Description: {{ product.description }}</div>
+      <div>Discount: {{ product.discount }}</div>
+    </div>
+  </div>
+</div>
